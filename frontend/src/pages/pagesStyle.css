@@ -1,0 +1,365 @@
+
+
+/**  SignUp styling */
+
+.SignUp,.LogIn{
+    display: flex;
+    width: 100%;
+    flex: 1;
+    align-items: center;
+
+    .SU-right,.SU-left{
+        flex: 1;
+    }
+    .SU-right{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        gap: 10px;
+        flex-direction: column;
+
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+            padding:10px 0;
+
+            .inputbox{
+                width: 100%;
+            }
+
+            button{
+                margin: 15px 0;
+                padding: 15px 0;
+            }
+
+            .description{
+                font-size: .7rem;
+                padding:8px 0;
+                letter-spacing: .5px;
+                transition: .2s;
+                color: var(--secondary-text-color) !important;
+            }
+            .required-message{
+                color:crimson !important;
+                transition: .2s ;
+            }
+        }
+    }
+    .SU-left{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    
+ @media (max-width:800px){
+    .SU-left{
+        display: none;
+    }
+ }
+}
+
+.logo{
+    img{
+     width: 45px;
+    }
+ }
+
+ .have-account{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+
+    a{
+        cursor: pointer;
+        text-decoration: none;
+        color: #1976d2 !important;
+        &:hover{text-decoration: underline;}
+    }
+ }
+
+
+/*? Home styling */
+
+
+.Home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex: 1;
+
+    .HomeBody{
+      width: 80%;
+      height: 90%;
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      background-color: var(--secondary-background-color);
+    }
+}
+
+.ChatSideBar{
+    display: flex;
+    flex-direction: column;
+    min-width: 30%;
+    border-right: 1px solid var(--secondary-text-color);
+    padding: 5px 8px;
+    .ChatHeader{
+        width: 100%;
+        padding: 8px;
+        font-size: 1rem;
+    }
+
+    .ChatSearch{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        background-color: var(--hover-color);
+        height: 40px;
+        border-radius: 4px;
+        overflow: hidden;
+        padding: 0 5px;
+        gap: 5px;
+        margin: 5px 0;
+
+        input{
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border: none;
+            background: none;
+            font-size: 1rem;
+        }
+    }
+  
+
+    .ChatFriends{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        flex: 1;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+        max-height: 500px;
+
+
+        .friend{
+            display: flex;
+            width: 100%;
+            padding: 10px 5px;
+            margin: 5px 0;
+            align-items: center;
+            gap: 8px;
+            border-radius: 6px;
+            transition: .2s;
+            cursor: pointer;
+
+            &:active{
+                scale: .9;
+            }
+
+            .friendCircle{
+                width: 40px;
+                height: 40px;
+                display: flex;
+                overflow: hidden;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                border: 1px solid var(--hover-color);
+                 img{
+                    width: 100%;
+                    object-fit: cover;
+                 }
+            }
+
+            .friendBody{
+               flex: 1;
+            }
+
+            &:hover{
+                background-color: var(--hover-color);
+            }
+
+        }
+    }
+
+    .ChatFriends::-webkit-scrollbar{
+        display: none;
+    }
+    
+
+}
+
+.FriendSide{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    height: 82.6vh;
+
+
+    .FS-header{
+        display: flex;
+        flex: .1;
+        overflow: hidden;
+        padding: 0 15px;
+        border-bottom: 1px solid var(--hover-color);
+
+        .friendInfo{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            .friend-logo{
+                width: 40px;
+                height: 40px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 1px solid var(--hover-color);
+                border-radius: 50%;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    .FS-body{
+        display: flex;
+        flex-direction: column;
+        padding:15px;
+        gap: 30px;
+        width: 100%;
+        flex: .8;
+        overflow-y: auto;
+
+        /* Custom scrollbar styling */
+        &::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: var(--hover-color); /* Background of the scrollbar track */
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--secondary-text-color); /* Color of the scrollbar thumb */
+            border-radius: 10px;
+            border: 2px solid var(--hover-color); /* Padding around the thumb */
+        }
+
+        .user-message,.friend-message{
+            width: max-content;
+            background-color:var(--background-color);
+            max-width: 50%;
+            border-radius:0 8px 8px 8px;
+            display: flex;
+            flex-direction: column;
+
+            .content-message{
+                padding: 10px;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+
+            .timestamp{
+                width: max-content;
+                align-self: flex-end;
+                margin: 5px;
+                font-size: .8rem;
+                color: var(--secondary-text-color) !important;
+            }
+        }
+
+        .friend-message{
+            align-self: flex-end;
+            border-radius: 8px 0 8px 8px;
+
+            .timestamp{
+                align-self: flex-start;
+            }
+        }
+
+    }
+
+    .FS-footer{
+        flex: .1;
+        display: flex;
+        border-top:1px solid var(--hover-color) ;
+        align-items: center;
+        padding: 0 10px;
+        position: relative;
+
+        .icons{
+            padding: 10px;
+            height: 45px;
+            border-radius: 6px;
+            margin: 3px;
+            cursor: pointer;
+            transition: .2s;
+
+            &:hover{
+                background-color: var(--hover-color);
+            }
+            &:active{
+                scale: .9;
+            }
+        }
+        .message-input{
+            width: 100%;
+            background-color: var(--hover-color);
+            height: 100%;
+            display: flex;
+            margin: 5px;
+
+            input{
+                background-color: transparent;
+                border: none;
+                outline: none;
+                padding: 0 10px;
+                font-size: 1.02rem;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.emoji-picker{
+    position: absolute;
+    bottom: 130%;
+    left: 5%;
+    }
+
+.higher{
+    flex: 1;
+    height: 100%;
+    width: 100% !important;
+    *{
+        width: 100%;
+        height: 100%;
+        background-color: var(--secondary-background-color) !important;
+    }
+}
+
+.noMessages{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    p{
+        border: 1px solid var(--secondary-text-color) !important;
+        color: var(--secondary-text-color) !important;
+        height: max-content;
+        padding: 5px;
+        font-size: .7rem;
+        border-radius: 6px;
+    }
+}
